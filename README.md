@@ -34,4 +34,4 @@ Ebenfalls wichtig ist das trotz das es als eine Konsolen Anwendung entwickelt we
 
 ## 📂 Dokumentationen
 
-- [Todo](Docs/Todo)
+- [Todo](Docs/Todo.md)
