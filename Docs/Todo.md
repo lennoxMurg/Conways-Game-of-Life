@@ -2,10 +2,10 @@
 
 ## 1. Vorbereitung
 
-- [ ] Wikipedia‑Artikel vollständig lesen
+- [X] Wikipedia‑Artikel vollständig lesen
 - [X] GitHub‑Repository erstellen
 - [X] README Grundstruktur anlegen
-- [ ] Ordnerstruktur vorbereiten (src/, docs/, etc.)
+- [ ] Ordnerstruktur vorbereiten (docs/, etc.)
 - [ ] Regeln des Game of Life schriftlich zusammenfassen
 
 ## 2. Projektplanung
