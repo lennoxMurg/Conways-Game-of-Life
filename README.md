@@ -22,7 +22,7 @@ Ebenfalls wichtig ist das trotz das es als eine Konsolen Anwendung entwickelt we
 
 ## 🛠️ Technologien
 
-- Godot Engine
+- Godot Engine (.Net /Ehemals Mono)
 - Visual Studio Code
 
 ### 🧑‍💻 Coding-/Programmier -Sprachen
