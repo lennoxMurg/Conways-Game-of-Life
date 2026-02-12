@@ -16,4 +16,4 @@
 
 ## Hier ist eine Übersicht aller Regeln in einer Tabelle
 
-![Regeln von Conways Game of Life](<../Pictures/Conways Game of Life.png>)
+![Regeln von Conways Game of Life](<Pictures/Conways Game of Life.png>)
