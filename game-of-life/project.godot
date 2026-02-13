@@ -12,11 +12,19 @@ config_version=5
 
 config/name="Game of Life"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Assets/Sprites/icon.svg"
 
 [dotnet]
 
 project/assembly_name="Game of Life"
+
+[file_customization]
+
+folder_colors={
+"res://Assets/": "purple",
+"res://Code/": "green",
+"res://Scenes/": "red"
+}
 
 [physics]
 
