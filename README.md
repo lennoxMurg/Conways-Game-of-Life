@@ -37,3 +37,7 @@ Ebenfalls wichtig ist das trotz das es als eine Konsolen Anwendung entwickelt we
 - [Todo für die Entwicklung](Docs/Todo.md)
 
 - [Regeln des Game of Life](Docs/Rules.md)
+
+----
+
+![Hallo | Beispielbild](Docs/Pictures/Screenshots/Hallo.png)

@@ -13,8 +13,8 @@
 - [ ] Anforderungen definieren (funktional + nicht‑funktional)
 - [ ] Features festlegen (Minimum + optional)
 - [ ] Architektur grob skizzieren
-- [ ] Szenenstruktur planen (Nodes, Scripts, UI)
-- [ ] Datenmodell festlegen (z. B. 2D‑Array, Double Buffering)
+- [X] Szenenstruktur planen (Nodes, Scripts, UI)
+- [X] Datenmodell festlegen (z. B. 2D‑Array, Double Buffering)
 
 ## 3. Godot‑Grundgerüst
 
@@ -26,7 +26,7 @@
 
 ## 4. Kernlogik implementieren
 
-- [ ] 2D‑Array für Zellenzustände erstellen
+- [-] 2D‑Array für Zellenzustände erstellen
 - [ ] Funktion: Nachbarn zählen
 - [ ] Funktion: Nächsten Zustand berechnen
 - [ ] Double Buffering einbauen (optional, aber sinnvoll)
@@ -34,9 +34,9 @@
 
 ## 5. Rendering
 
-- [ ] Zellen visuell darstellen (TileMap, ColorRect, Shader, etc.)
-- [ ] Alive/Dead‑Farben definieren
-- [ ] Grid‑Update an Rendering koppeln
+- [X] Zellen visuell darstellen (TileMap, ColorRect, Shader, etc.)
+- [X] Alive/Dead‑Farben definieren
+- [X] Grid‑Update an Rendering koppeln
 - [ ] Performance testen (verschiedene Grid‑Größen, Coding Sprache)
 
 ## 6. UI & Interaktion
@@ -51,7 +51,6 @@
 
 - [ ] Architektur erklären
 - [ ] Entscheidungen begründen
-- [ ] Probleme + Lösungen dokumentieren
 - [ ] Screenshots/GIFs einfügen (wenn Prototyp fertig)
 - [ ] README aktualisieren
 

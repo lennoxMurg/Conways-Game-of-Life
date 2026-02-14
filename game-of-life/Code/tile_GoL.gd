@@ -16,16 +16,6 @@ func _ready() -> void:
 			set_cell(Vector2i(x, y), 0, Vector2i(0, 0), 0)
 	
 
-func toggle_cell(tile_pos: Vector2i) -> void:
-	
-	var current_cell := get_cell_atlas_coords(tile_pos)
-	
-	if current_cell == alive:
-		set_cell(tile_pos, 0, Vector2i(0, 0), 0)
-	elif current_cell == dead:
-		set_cell(tile_pos, 0, Vector2i(1, 0), 0)
-	
-
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Pause"):
 		playing = !playing
@@ -41,4 +31,14 @@ func _input(event: InputEvent) -> void:
 			return
 		
 		toggle_cell(tile_pos)
+	
+
+
+func toggle_cell(tile_pos: Vector2i) -> void:
+	var current_cell := get_cell_atlas_coords(tile_pos)
+	
+	if current_cell == alive:
+		set_cell(tile_pos, 0, Vector2i(0, 0), 0)
+	elif current_cell == dead:
+		set_cell(tile_pos, 0, Vector2i(1, 0), 0)
 	
