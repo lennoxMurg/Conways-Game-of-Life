@@ -7,8 +7,10 @@
 script = ExtResource("1_v0iea")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=925460280]
-enabled = false
+zoom = Vector2(2, 2)
 position_smoothing_enabled = true
+position_smoothing_speed = 4.5
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1847942975]
+[node name="Temporary_Sprite" type="Sprite2D" parent="." unique_id=1847942975]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_cvnsp")

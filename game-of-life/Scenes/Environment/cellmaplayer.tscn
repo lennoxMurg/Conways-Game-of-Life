@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cmcsesjmm1uv5"]
+
+[ext_resource type="TileSet" uid="uid://b58eaxadobdjq" path="res://Assets/Tile Sets/GameOfLife.tres" id="1_uh35r"]
+[ext_resource type="Script" uid="uid://cd3qp3thfgsph" path="res://Code/tile_GoL.gd" id="2_uh35r"]
+
+[node name="CellMap" type="TileMapLayer" unique_id=2036519792]
+tile_set = ExtResource("1_uh35r")
+collision_enabled = false
+navigation_enabled = false
+script = ExtResource("2_uh35r")
+width = 120
+height = 67
+
+[node name="CellOutLine" type="TileMapLayer" parent="." unique_id=1575646696]

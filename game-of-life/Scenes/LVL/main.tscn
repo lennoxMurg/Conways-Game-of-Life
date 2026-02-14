@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://b34oivd33j2m5"]
 
-[ext_resource type="Script" uid="uid://c5ma6nl7ld18k" path="res://Code/Gol.gd" id="1_1cdup"]
-[ext_resource type="PackedScene" uid="uid://cmcsesjmm1uv5" path="res://Scenes/Environment/tile_map_layer.tscn" id="1_cu5c2"]
+[ext_resource type="PackedScene" uid="uid://cmcsesjmm1uv5" path="res://Scenes/Environment/cellmaplayer.tscn" id="1_cu5c2"]
+[ext_resource type="PackedScene" uid="uid://d1dt6tnq3i74y" path="res://Scenes/player.tscn" id="2_1cdup"]
 
 [node name="Main" type="Node2D" unique_id=1467865010]
-script = ExtResource("1_1cdup")
 
 [node name="TileMapLayer" parent="." unique_id=2036519792 instance=ExtResource("1_cu5c2")]
+
+[node name="Player" parent="." unique_id=567229074 instance=ExtResource("2_1cdup")]
