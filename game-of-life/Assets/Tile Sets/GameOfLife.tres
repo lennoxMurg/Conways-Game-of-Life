@@ -1,11 +1,12 @@
 [gd_resource type="TileSet" format=3 uid="uid://b58eaxadobdjq"]
 
-[ext_resource type="Texture2D" uid="uid://b2rcefmb4xn45" path="res://Assets/Sprites/Game of Life.png" id="1_up1xm"]
+[ext_resource type="Texture2D" uid="uid://b2rcefmb4xn45" path="res://Assets/Sprites/Game of Life.png" id="1_wm6hh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_up1xm"]
-texture = ExtResource("1_up1xm")
+texture = ExtResource("1_wm6hh")
 0:0/0 = 0
 1:0/0 = 0
 
 [resource]
 sources/0 = SubResource("TileSetAtlasSource_up1xm")
+sources/4 = SubResource("TileSetAtlasSource_up1xm")

@@ -23,6 +23,7 @@ config/size/viewport_width=1152
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 mouse_cursor/custom_image="uid://b6xhj2eystef0"
+mouse_cursor/custom_image_hotspot=Vector2(16, 16)
 
 [dotnet]
 
@@ -86,4 +87,5 @@ Sprint={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
