@@ -10,35 +10,123 @@ script = ExtResource("1_q6rli")
 
 [node name="Control" type="Control" parent="." unique_id=243648770]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="SpeedRing" type="TextureRect" parent="Control" unique_id=531993102]
-visible = false
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("2_7ib5g")
-
-[node name="SpeedNumber" type="Label" parent="Control" unique_id=375541481]
-visible = false
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="PlayPause" type="TextureButton" parent="Control" unique_id=1693968056]
 layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 120.0
+offset_bottom = 120.0
 texture_normal = ExtResource("1_a32ds")
+stretch_mode = 4
 
 [node name="NextStep" type="TextureButton" parent="Control" unique_id=284490185]
-visible = false
 layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
+offset_left = 1608.0
+offset_top = 8.0
+offset_right = 1720.0
+offset_bottom = 120.0
 texture_normal = ExtResource("2_1t72d")
+stretch_mode = 4
+
+[node name="Speed_Ring_Button" type="Button" parent="Control" unique_id=2105722809]
+layout_mode = 0
+offset_left = 1800.0
+offset_top = 8.0
+offset_right = 1912.0
+offset_bottom = 120.0
+
+[node name="SpeedRing" type="TextureRect" parent="Control/Speed_Ring_Button" unique_id=531993102]
+layout_mode = 0
+offset_right = 112.0
+offset_bottom = 112.0
+texture = ExtResource("2_7ib5g")
+
+[node name="Speed_Display" type="Label" parent="Control/Speed_Ring_Button" unique_id=950376195]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 21.0
+offset_right = 91.0
+offset_bottom = 77.0
+theme_override_font_sizes/font_size = 40
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Speed_controls" type="VBoxContainer" parent="Control" unique_id=1718935299]
+layout_mode = 0
+offset_left = 1800.0
+offset_top = 136.0
+offset_right = 1912.0
+offset_bottom = 482.0
+theme_override_constants/separation = 7
+metadata/_edit_group_ = true
+
+[node name="Speed_Level_1" type="Button" parent="Control/Speed_controls" unique_id=745567563]
+layout_mode = 2
+text = "1"
+metadata/speed_level = 1
+
+[node name="Speed_Level_2" type="Button" parent="Control/Speed_controls" unique_id=2021095615]
+layout_mode = 2
+text = "2"
+metadata/speed_level = 2
+
+[node name="Speed_Level_3" type="Button" parent="Control/Speed_controls" unique_id=1704379921]
+layout_mode = 2
+text = "3"
+metadata/speed_level = 3
+
+[node name="Speed_Level_4" type="Button" parent="Control/Speed_controls" unique_id=113434541]
+layout_mode = 2
+text = "4"
+metadata/speed_level = 4
+
+[node name="Speed_Level_5" type="Button" parent="Control/Speed_controls" unique_id=554213185]
+layout_mode = 2
+text = "5"
+metadata/speed_level = 5
+
+[node name="Speed_Level_6" type="Button" parent="Control/Speed_controls" unique_id=873512091]
+layout_mode = 2
+text = "6"
+metadata/speed_level = 6
+
+[node name="Speed_Level_7" type="Button" parent="Control/Speed_controls" unique_id=1492123649]
+layout_mode = 2
+text = "7"
+metadata/speed_level = 7
+
+[node name="Speed_Level_8" type="Button" parent="Control/Speed_controls" unique_id=698579483]
+layout_mode = 2
+text = "8"
+metadata/speed_level = 8
+
+[node name="Speed_Level_9" type="Button" parent="Control/Speed_controls" unique_id=44178882]
+layout_mode = 2
+text = "9"
+metadata/speed_level = 9
+
+[node name="Speed_Level_10" type="Button" parent="Control/Speed_controls" unique_id=717353885]
+layout_mode = 2
+text = "10"
+metadata/speed_level = 10
 
 [connection signal="pressed" from="Control/PlayPause" to="." method="_on_play_pause_pressed"]
 [connection signal="pressed" from="Control/NextStep" to="." method="_on_next_step_pressed"]
+[connection signal="pressed" from="Control/Speed_Ring_Button" to="." method="_on_speed_ring_button_pressed"]
+[connection signal="pressed" from="Control/Speed_controls/Speed_Level_1" to="." method="_on_speed_level_pressed" flags=18]
+[connection signal="pressed" from="Control/Speed_controls/Speed_Level_2" to="." method="_on_speed_level_pressed" flags=18]
+[connection signal="pressed" from="Control/Speed_controls/Speed_Level_3" to="." method="_on_speed_level_pressed" flags=18]
+[connection signal="pressed" from="Control/Speed_controls/Speed_Level_4" to="." method="_on_speed_level_pressed" flags=18]
+[connection signal="pressed" from="Control/Speed_controls/Speed_Level_5" to="." method="_on_speed_level_pressed" flags=18]
+[connection signal="pressed" from="Control/Speed_controls/Speed_Level_6" to="." method="_on_speed_level_pressed" flags=18]
+[connection signal="pressed" from="Control/Speed_controls/Speed_Level_7" to="." method="_on_speed_level_pressed" flags=18]
+[connection signal="pressed" from="Control/Speed_controls/Speed_Level_8" to="." method="_on_speed_level_pressed" flags=18]
+[connection signal="pressed" from="Control/Speed_controls/Speed_Level_9" to="." method="_on_speed_level_pressed" flags=18]
+[connection signal="pressed" from="Control/Speed_controls/Speed_Level_10" to="." method="_on_speed_level_pressed" flags=18]

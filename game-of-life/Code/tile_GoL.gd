@@ -3,25 +3,38 @@ extends TileMapLayer
 var alive_cell : Vector2i = Vector2i(1, 0)
 var dead_cell : Vector2i = Vector2i(0, 0)
 
-var playing : bool = true
+var playing : bool = false
 
 @export_category("Map Size")
 @export var width : int
 @export var height : int
 
+##Variables for the Generational update speed / Timer
+var update_speed : float = 0.15 #Seconds per generation
+var timer : float = 0.00 #The timer start time
+
+var speed_level : int = 1
 
 
+#Called once when the node enters the scene
 func _ready() -> void:
 	for x in width:
 		for y in height:
 			set_cell(Vector2i(x, y), 0, Vector2i(0, 0), 0)
 	
 
-# TODO add Timer so that the updating of cells doesn't happen 60  times a second
-func _process(_delta: float) -> void:
-	if playing:
-		update_cells()
+
+func apply_speed() -> void:
+	update_speed = 1.0 / speed_level
 	
+
+
+func _process(delta: float) -> void:
+	if playing:
+		timer += delta
+		if timer >= update_speed:
+			timer = 0.0
+			update_cells()
 
 
 func update_cells() -> void:
@@ -65,38 +78,22 @@ func count_neighbors(location: Vector2i) -> int:
 		Vector2i(-1,  0),                  Vector2i(1,  0),
 		Vector2i(-1,  1), Vector2i(0,  1), Vector2i(1,  1)
 	]
-
+	
 	var count = 0
-
+	
 	for offset in offsets:
 		var new_cell_location = location + offset
-
+	
 		# Out-of-bounds skippen
 		if new_cell_location.x < 0 or new_cell_location.y < 0:
 			continue
 		if new_cell_location.x >= width or new_cell_location.y >= height:
 			continue
-
+	
 		if get_cell_atlas_coords(new_cell_location) == alive_cell:
 			count += 1
 	
 	return count
-
-
-
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("Click"):
-		var mouse_location: Vector2 = get_global_mouse_position()
-		var tile_location: Vector2i = local_to_map(mouse_location)
-		
-		# Out of bounds check
-		if tile_location.x < 0 or tile_location.y < 0:
-			return
-		if tile_location.x >= width or tile_location.y >= height:
-			return
-		
-		toggle_cell(tile_location)
-	
 
 
 func toggle_cell(tile_location: Vector2i) -> void:
@@ -108,5 +105,18 @@ func toggle_cell(tile_location: Vector2i) -> void:
 		set_cell(tile_location, 0, Vector2i(1, 0), 0)
 	
 
-func toggle_play_pause():
-	playing = !playing
+
+#All input related functions
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("Click"):
+		var mouse_location: Vector2 = get_global_mouse_position()
+		var tile_location: Vector2i = local_to_map(mouse_location)
+		
+		# Out of bounds/map check
+		if tile_location.x < 0 or tile_location.y < 0:
+			return
+		if tile_location.x >= width or tile_location.y >= height:
+			return
+		
+		toggle_cell(tile_location)
+	
