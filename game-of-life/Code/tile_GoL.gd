@@ -1,7 +1,7 @@
 extends TileMapLayer
 
-var alive : Vector2i = Vector2i(1, 0)
-var dead : Vector2i = Vector2i(0, 0)
+var alive_cell : Vector2i = Vector2i(1, 0)
+var dead_cell : Vector2i = Vector2i(0, 0)
 
 var playing : bool = false
 
@@ -10,35 +10,103 @@ var playing : bool = false
 @export var height : int
 
 
+
 func _ready() -> void:
 	for x in width:
 		for y in height:
 			set_cell(Vector2i(x, y), 0, Vector2i(0, 0), 0)
 	
 
+# TODO add Timer so that the updating of cells doesn't happen 60  times a second
+func _process(_delta: float) -> void:
+	if playing:
+		update_cells()
+	
+
+
+func update_cells() -> void:
+	var next_state = []
+	
+	#Prepares the array in which all cells and their states will be apllyied
+	next_state.resize(width)
+	for x in width:
+		next_state[x] = []
+		next_state[x].resize(height)
+	
+	#"Calculate" the rules on each cell | Does not aplly them on the TileMap
+	for x in width:
+		for y in height:
+			
+			var location = Vector2i(x, y)
+			var cell = get_cell_atlas_coords(location)
+			var neighbors = count_neighbors(location)
+			
+			if cell == alive_cell:
+				if neighbors == 2 or neighbors == 3:
+					next_state[x][y] = alive_cell
+				else:
+					next_state[x][y] = dead_cell
+			else:
+				if neighbors == 3:
+					next_state[x][y] = alive_cell
+				else:
+					next_state[x][y] = dead_cell
+	
+	#Aplly the rules on the TileMap
+	for x in width:
+		for y in height:
+			set_cell(Vector2i(x, y), 0, next_state[x][y], 0)
+	
+
+
+func count_neighbors(location: Vector2i) -> int:
+	var offsets = [
+		Vector2i(-1, -1), Vector2i(0, -1), Vector2i(1, -1),
+		Vector2i(-1,  0),                  Vector2i(1,  0),
+		Vector2i(-1,  1), Vector2i(0,  1), Vector2i(1,  1)
+	]
+
+	var count = 0
+
+	for offset in offsets:
+		var new_cell_location = location + offset
+
+		# Out-of-bounds skippen
+		if new_cell_location.x < 0 or new_cell_location.y < 0:
+			continue
+		if new_cell_location.x >= width or new_cell_location.y >= height:
+			continue
+
+		if get_cell_atlas_coords(new_cell_location) == alive_cell:
+			count += 1
+	
+	return count
+
+
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Pause"):
 		playing = !playing
-
+	
 	if event.is_action_pressed("Click"):
-		var mouse_pos: Vector2 = get_global_mouse_position()
-		var tile_pos: Vector2i = local_to_map(mouse_pos)
+		var mouse_location: Vector2 = get_global_mouse_position()
+		var tile_location: Vector2i = local_to_map(mouse_location)
 		
 		# Out of bounds check
-		if tile_pos.x < 0 or tile_pos.y < 0:
+		if tile_location.x < 0 or tile_location.y < 0:
 			return
-		if tile_pos.x >= width or tile_pos.y >= height:
+		if tile_location.x >= width or tile_location.y >= height:
 			return
 		
-		toggle_cell(tile_pos)
+		toggle_cell(tile_location)
 	
 
 
-func toggle_cell(tile_pos: Vector2i) -> void:
-	var current_cell := get_cell_atlas_coords(tile_pos)
+func toggle_cell(tile_location: Vector2i) -> void:
+	var current_cell := get_cell_atlas_coords(tile_location)
 	
-	if current_cell == alive:
-		set_cell(tile_pos, 0, Vector2i(0, 0), 0)
-	elif current_cell == dead:
-		set_cell(tile_pos, 0, Vector2i(1, 0), 0)
+	if current_cell == alive_cell:
+		set_cell(tile_location, 0, Vector2i(0, 0), 0)
+	elif current_cell == dead_cell:
+		set_cell(tile_location, 0, Vector2i(1, 0), 0)
 	
