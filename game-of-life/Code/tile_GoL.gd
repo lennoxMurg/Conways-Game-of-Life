@@ -3,7 +3,7 @@ extends TileMapLayer
 var alive_cell : Vector2i = Vector2i(1, 0)
 var dead_cell : Vector2i = Vector2i(0, 0)
 
-var playing : bool = false
+var playing : bool = true
 
 @export_category("Map Size")
 @export var width : int
@@ -85,9 +85,6 @@ func count_neighbors(location: Vector2i) -> int:
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("Pause"):
-		playing = !playing
-	
 	if event.is_action_pressed("Click"):
 		var mouse_location: Vector2 = get_global_mouse_position()
 		var tile_location: Vector2i = local_to_map(mouse_location)
@@ -110,3 +107,6 @@ func toggle_cell(tile_location: Vector2i) -> void:
 	elif current_cell == dead_cell:
 		set_cell(tile_location, 0, Vector2i(1, 0), 0)
 	
+
+func toggle_play_pause():
+	playing = !playing

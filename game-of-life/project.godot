@@ -32,6 +32,7 @@ project/assembly_name="Game of Life"
 
 folder_colors={
 "res://Assets/": "purple",
+"res://Assets/Sprites/Menu/": "red",
 "res://Code/": "green",
 "res://Scenes/": "red"
 }

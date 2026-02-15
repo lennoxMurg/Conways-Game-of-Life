@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://blqqeiwspw7x4"]
+
+[ext_resource type="Texture2D" uid="uid://bsqp1wtiifips" path="res://Assets/Sprites/Menu/Play_Button.png" id="1_a32ds"]
+[ext_resource type="Script" uid="uid://gu7g7m1s6ubf" path="res://Code/heads_up_display.gd" id="1_q6rli"]
+[ext_resource type="Texture2D" uid="uid://cj3h00nxuwmib" path="res://Assets/Sprites/Menu/Skip_next_Button.png" id="2_1t72d"]
+[ext_resource type="Texture2D" uid="uid://b64xwk4srrw6d" path="res://Assets/Sprites/Menu/Speed_ring.png" id="2_7ib5g"]
+
+[node name="HeadsUpDisplay" type="CanvasLayer" unique_id=273241592]
+script = ExtResource("1_q6rli")
+
+[node name="Control" type="Control" parent="." unique_id=243648770]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SpeedRing" type="TextureRect" parent="Control" unique_id=531993102]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_7ib5g")
+
+[node name="SpeedNumber" type="Label" parent="Control" unique_id=375541481]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="PlayPause" type="TextureButton" parent="Control" unique_id=1693968056]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture_normal = ExtResource("1_a32ds")
+
+[node name="NextStep" type="TextureButton" parent="Control" unique_id=284490185]
+visible = false
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture_normal = ExtResource("2_1t72d")
+
+[connection signal="pressed" from="Control/PlayPause" to="." method="_on_play_pause_pressed"]
+[connection signal="pressed" from="Control/NextStep" to="." method="_on_next_step_pressed"]
