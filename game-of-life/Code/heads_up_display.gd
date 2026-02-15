@@ -16,7 +16,6 @@ class_name Hud extends CanvasLayer
 @onready var next_step: TextureButton = $Control/NextStep
 
 ##Variables for the speed indicator of the generation update time
-@onready var speed_ring_button: Button = $Control/Speed_Ring_Button
 @onready var speed_controls: VBoxContainer = $Control/Speed_controls
 @onready var speed_display: Label = $Control/Speed_Ring_Button/Speed_Display
 
@@ -24,6 +23,7 @@ class_name Hud extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
 	if game.playing:
 		play_pause.texture_normal = icon_play
 	else:

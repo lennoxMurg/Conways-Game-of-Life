@@ -11,11 +11,12 @@ config_version=5
 [application]
 
 config/name="Game of Life"
+config/description="Eine Godot variante des Game of Life"
 config/tags=PackedStringArray("2d", "simulation")
 run/main_scene="uid://b34oivd33j2m5"
 config/features=PackedStringArray("4.6", "C#", "Forward Plus")
-config/icon="res://Assets/Sprites/icon.svg"
-config/defaults/default_clear_color=Color(0.3, 0.3, 0.3, 1)
+boot_splash/use_filter=false
+config/icon="uid://du1fqenuejmsg"
 config/size/viewport_height=648
 config/size/viewport_width=1152
 
