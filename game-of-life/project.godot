@@ -24,6 +24,7 @@ config/size/viewport_width=1152
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=3
 mouse_cursor/custom_image="uid://c4673mat4mus4"
 
 [dotnet]
@@ -34,7 +35,8 @@ project/assembly_name="Game of Life"
 
 folder_colors={
 "res://Assets/": "purple",
-"res://Assets/Sprites/Menu/": "red",
+"res://Assets/Sprites/HUD/": "red",
+"res://Assets/Sprites/HUD/Menu/": "blue",
 "res://Code/": "green",
 "res://Scenes/": "red"
 }

@@ -3,15 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://cmcsesjmm1uv5" path="res://Scenes/Environment/cellmaplayer.tscn" id="1_cu5c2"]
 [ext_resource type="PackedScene" uid="uid://d1dt6tnq3i74y" path="res://Scenes/player.tscn" id="2_1cdup"]
 [ext_resource type="PackedScene" uid="uid://blqqeiwspw7x4" path="res://Scenes/UI/heads_up_display.tscn" id="3_otnrr"]
-[ext_resource type="Texture2D" uid="uid://bsqp1wtiifips" path="res://Assets/Sprites/Menu/Play_Button.png" id="4_5smtg"]
-[ext_resource type="Texture2D" uid="uid://dya8l8tus1ohc" path="res://Assets/Sprites/Menu/Pause_Button.png" id="5_yt42v"]
 
 [node name="Main" type="Node2D" unique_id=1467865010]
 
 [node name="TileMapLayer" parent="." unique_id=2036519792 instance=ExtResource("1_cu5c2")]
 
 [node name="Player" parent="." unique_id=567229074 instance=ExtResource("2_1cdup")]
+position = Vector2(960, 540)
 
 [node name="HeadsUpDisplay" parent="." unique_id=273241592 instance=ExtResource("3_otnrr")]
-icon_play = ExtResource("4_5smtg")
-icon_pause = ExtResource("5_yt42v")

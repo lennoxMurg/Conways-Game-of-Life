@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://blqqeiwspw7x4"]
 
-[ext_resource type="Texture2D" uid="uid://bsqp1wtiifips" path="res://Assets/Sprites/Menu/Play_Button.png" id="1_a32ds"]
+[ext_resource type="Texture2D" uid="uid://bsqp1wtiifips" path="res://Assets/Sprites/HUD/Play_Button.png" id="1_a32ds"]
 [ext_resource type="Script" uid="uid://gu7g7m1s6ubf" path="res://Code/heads_up_display.gd" id="1_q6rli"]
-[ext_resource type="Texture2D" uid="uid://cj3h00nxuwmib" path="res://Assets/Sprites/Menu/Skip_next_Button.png" id="2_1t72d"]
-[ext_resource type="Texture2D" uid="uid://b64xwk4srrw6d" path="res://Assets/Sprites/Menu/Speed_ring.png" id="2_7ib5g"]
+[ext_resource type="Texture2D" uid="uid://cj3h00nxuwmib" path="res://Assets/Sprites/HUD/Skip_next_Button.png" id="2_1t72d"]
+[ext_resource type="Texture2D" uid="uid://b64xwk4srrw6d" path="res://Assets/Sprites/HUD/Speed_ring.png" id="2_7ib5g"]
+[ext_resource type="Texture2D" uid="uid://dya8l8tus1ohc" path="res://Assets/Sprites/HUD/Pause_Button.png" id="3_e6bd3"]
 
 [sub_resource type="Animation" id="Animation_7ib5g"]
 length = 0.001
@@ -157,6 +158,8 @@ _data = {
 
 [node name="HeadsUpDisplay" type="CanvasLayer" unique_id=273241592]
 script = ExtResource("1_q6rli")
+icon_play = ExtResource("1_a32ds")
+icon_pause = ExtResource("3_e6bd3")
 
 [node name="Control" type="Control" parent="." unique_id=243648770]
 visible = false

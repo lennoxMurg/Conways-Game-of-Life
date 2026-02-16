@@ -84,7 +84,7 @@ func count_neighbors(location: Vector2i) -> int:
 	for offset in offsets:
 		var new_cell_location = location + offset
 	
-		# Out-of-bounds skippen
+		#Out of bounds/map check
 		if new_cell_location.x < 0 or new_cell_location.y < 0:
 			continue
 		if new_cell_location.x >= width or new_cell_location.y >= height:
@@ -112,7 +112,7 @@ func _input(event: InputEvent) -> void:
 		var mouse_location: Vector2 = get_global_mouse_position()
 		var tile_location: Vector2i = local_to_map(mouse_location)
 		
-		# Out of bounds/map check
+		#Out of bounds/map check
 		if tile_location.x < 0 or tile_location.y < 0:
 			return
 		if tile_location.x >= width or tile_location.y >= height:

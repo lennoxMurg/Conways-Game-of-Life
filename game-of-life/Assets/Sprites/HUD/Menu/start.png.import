@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct20dv020rqma"
-path="res://.godot/imported/Numbers.png-828c49396edb3d25530b358a5c9ef7e3.ctex"
+uid="uid://w3i8e4okpbo0"
+path="res://.godot/imported/start.png-081ed76b7b07e08050fd0c0abe2482c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Menu/Numbers.png"
-dest_files=["res://.godot/imported/Numbers.png-828c49396edb3d25530b358a5c9ef7e3.ctex"]
+source_file="res://Assets/Sprites/HUD/Menu/start.png"
+dest_files=["res://.godot/imported/start.png-081ed76b7b07e08050fd0c0abe2482c6.ctex"]
 
 [params]
 

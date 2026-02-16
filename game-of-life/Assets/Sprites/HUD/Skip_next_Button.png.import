@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b64xwk4srrw6d"
-path="res://.godot/imported/Speed_ring.png-32abd7e7054403f21a4a9dafec243663.ctex"
+uid="uid://cj3h00nxuwmib"
+path="res://.godot/imported/Skip_next_Button.png-9bf6244dd03dd823817d8826f3e91feb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Menu/Speed_ring.png"
-dest_files=["res://.godot/imported/Speed_ring.png-32abd7e7054403f21a4a9dafec243663.ctex"]
+source_file="res://Assets/Sprites/HUD/Skip_next_Button.png"
+dest_files=["res://.godot/imported/Skip_next_Button.png-9bf6244dd03dd823817d8826f3e91feb.ctex"]
 
 [params]
 

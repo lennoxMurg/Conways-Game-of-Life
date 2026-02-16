@@ -6,44 +6,41 @@
 - [X] GitHub‑Repository erstellen
 - [X] README Grundstruktur anlegen
 - [X] Regeln des Game of Life schriftlich zusammenfassen
-- [ ] Ordnerstruktur vorbereiten (docs/, etc.)
+- [X] Ordnerstruktur vorbereiten (docs/, etc.)
 
 ## 2. Projektplanung
 
-- [ ] Anforderungen definieren (funktional + nicht‑funktional)
-- [ ] Features festlegen (Minimum + optional)
-- [ ] Architektur grob skizzieren
+- [X] Architektur grob skizzieren
 - [X] Szenenstruktur planen (Nodes, Scripts, UI)
 - [X] Datenmodell festlegen (z. B. 2D‑Array, Double Buffering)
 
 ## 3. Godot‑Grundgerüst
 
-- [ ] Neues Godot‑Projekt erstellen
-- [ ] Hauptszene anlegen
-- [ ] Grid‑Node erstellen (z. B. Node2D oder TileMap)
-- [ ] Control‑Script anlegen (für Simulation/Steuerung)
-- [ ] UI‑Grundlayout vorbereiten (Start/Stop, Reset, Speed)
+- [X] Neues Godot‑Projekt erstellen
+- [X] Hauptszene anlegen
+- [X] Grid‑Node erstellen (z. B. Node2D oder TileMap)
+- [X] Control‑Script anlegen (für Simulation/Steuerung)
+- [X] UI‑Grundlayout vorbereiten (Start/Stop, Reset, Speed)
 
 ## 4. Kernlogik implementieren
 
 - [-] 2D‑Array für Zellenzustände erstellen
-- [ ] Funktion: Nachbarn zählen
-- [ ] Funktion: Nächsten Zustand berechnen
-- [ ] Double Buffering einbauen (optional, aber sinnvoll)
-- [ ] Update‑Zyklus implementieren (Timer oder _process())
+- [X] Funktion: Nachbarn zählen
+- [X] Funktion: Nächsten Zustand berechnen
+- [X] Update‑Zyklus implementieren (Timer oder _process())
 
 ## 5. Rendering
 
 - [X] Zellen visuell darstellen (TileMap, ColorRect, Shader, etc.)
 - [X] Alive/Dead‑Farben definieren
 - [X] Grid‑Update an Rendering koppeln
-- [ ] Performance testen (verschiedene Grid‑Größen, Coding Sprache)
+- [X] Performance testen (verschiedene Grid‑Größen, Coding Sprache)
 
 ## 6. UI & Interaktion
 
-- [ ] Start/Stop‑Button
+- [X] Start/Stop‑Button
 - [ ] Reset‑Button
-- [ ] Geschwindigkeitsslider
+- [X] Geschwindigkeitsslider
 - [ ] Grid‑Größe einstellbar (optional)
 - [ ] Presets (Glider, Pulsar, Random) optional hinzufügen
 
