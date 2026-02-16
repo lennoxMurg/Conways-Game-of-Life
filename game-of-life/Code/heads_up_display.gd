@@ -2,6 +2,8 @@ class_name Hud extends CanvasLayer
 
 ##Variable used to toggle HUD visibility
 @onready var HUD : Control = $Control
+@onready var fade: AnimationPlayer = $Control/Fade_in_out
+
 
 ##Variable for the TileMap |Used to pause/unpause and control the update speed
 @onready var game := get_node("../TileMapLayer")
@@ -24,10 +26,22 @@ class_name Hud extends CanvasLayer
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
+	HUD.visible = true
+	
 	if game.playing:
 		play_pause.texture_normal = icon_play
 	else:
 		play_pause.texture_normal = icon_pause
+	
+
+
+
+func toggle_fade() -> void:
+	if HUD.visible == true:
+		fade.play("fade_out")
+	else:
+		HUD.visible = true
+		fade.play("fade_in")
 	
 
 
@@ -46,7 +60,12 @@ func _on_next_step_pressed() -> void:
 	
 
 func _on_speed_ring_button_pressed() -> void:
-	speed_controls.visible = !speed_controls.visible
+	if speed_controls.visible:
+		fade.play("speed_select_out")
+	else:
+		speed_controls.visible = true
+		fade.play("speed_select_in")
+	
 	
 
 func update_speed_display() -> void:
@@ -67,7 +86,7 @@ func _on_speed_level_pressed(button: Button) -> void:
 #All input related Functions
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Hide_Hud"):
-		HUD.visible = !HUD.visible
+		toggle_fade()
 	
 	if event.is_action_pressed("Pause"):
 		_on_play_pause_pressed()
