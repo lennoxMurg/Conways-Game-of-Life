@@ -60,7 +60,11 @@
 ## 9. Abgabe vorbereiten
 
 - [X] Repo final durchgehen
-- [ ] README finalisieren
-- [ ] Docs prüfen
+- [X] README finalisieren
+- [X] Docs prüfen
 - [ ] Kurze Präsentation/Erklärung für das Gespräch vorbereiten
 - [ ] Projekt einmal komplett durchtesten
+
+## 10. Abgabe des Projektes am Mittwoch den 18.02.26
+
+- [] Projekt abgeben
