@@ -9,6 +9,6 @@
 [node name="TileMapLayer" parent="." unique_id=2036519792 instance=ExtResource("1_cu5c2")]
 
 [node name="Player" parent="." unique_id=567229074 instance=ExtResource("2_1cdup")]
-position = Vector2(960, 540)
+position = Vector2(960, 543)
 
 [node name="HeadsUpDisplay" parent="." unique_id=273241592 instance=ExtResource("3_otnrr")]

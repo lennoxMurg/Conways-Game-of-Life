@@ -30,6 +30,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Title_V2:custom_minimum_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_t1b1y"]
 resource_name = "fade_in"
@@ -85,6 +97,7 @@ offset_top = 150.0
 offset_right = 384.0
 offset_bottom = 173.0
 grow_horizontal = 2
+scale = Vector2(0.98, 0.98)
 theme_override_fonts/font = ExtResource("2_t1b1y")
 theme_override_font_sizes/font_size = 155
 text = "Game of Life"
@@ -113,12 +126,6 @@ theme_override_fonts/font = ExtResource("2_t1b1y")
 theme_override_font_sizes/font_size = 45
 text = "Start"
 
-[node name="Settings_btn" type="Button" parent="ButtonContainer" unique_id=1265896787]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_t1b1y")
-theme_override_font_sizes/font_size = 45
-text = "Settings"
-
 [node name="Quit_btn" type="Button" parent="ButtonContainer" unique_id=1634235729]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_t1b1y")
@@ -137,11 +144,10 @@ offset_top = -23.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("4_ugp1d")
-text = "Von Lennox Murg"
+text = "Von Lennox Murg - 2026"
 
 [node name="MenuPlayer" type="AnimationPlayer" parent="." unique_id=2018544336]
 libraries/ = SubResource("AnimationLibrary_tjcm1")
 
 [connection signal="pressed" from="ButtonContainer/Start_btn" to="." method="_on_start_btn_pressed"]
-[connection signal="pressed" from="ButtonContainer/Settings_btn" to="." method="_on_settings_btn_pressed"]
 [connection signal="pressed" from="ButtonContainer/Quit_btn" to="." method="_on_quit_btn_pressed"]

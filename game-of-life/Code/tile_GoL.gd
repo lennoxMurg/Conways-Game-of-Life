@@ -109,6 +109,8 @@ func toggle_cell(tile_location: Vector2i) -> void:
 #All input related functions
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Click"):
+		if get_viewport().gui_get_hovered_control() != null:
+			return
 		var mouse_location: Vector2 = get_global_mouse_position()
 		var tile_location: Vector2i = local_to_map(mouse_location)
 		

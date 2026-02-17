@@ -11,7 +11,7 @@ collision_enabled = false
 navigation_enabled = false
 script = ExtResource("2_uh35r")
 width = 120
-height = 67
+height = 68
 
 [node name="CellOutLine" type="TileMapLayer" parent="." unique_id=1575646696]
 tile_set = ExtResource("3_fh3fc")
