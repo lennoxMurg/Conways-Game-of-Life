@@ -38,6 +38,8 @@ Ebenfalls wichtig ist das trotz das es als eine Konsolen Anwendung entwickelt we
 
 - [Regeln des Game of Life](Docs/Rules.md)
 
+- [Allgemeine Dokumentation](Docs/Dokumentation.md)
+
 ----
 
 ![Hallo | Beispielbild](Docs/Pictures/Screenshots/Hallo.png)
