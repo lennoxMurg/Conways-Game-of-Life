@@ -41,3 +41,16 @@ Ebenfalls wichtig ist das trotz das es als eine Konsolen Anwendung entwickelt we
 ----
 
 ![Hallo | Beispielbild](Docs/Pictures/Screenshots/Hallo.png)
+
+----
+
+## Programmiersprache und sprache im code
+
+- __Als programmiersprache wird GDscript verwendet.__
+- GDscript ist eine Dynamisch geschriebene sprache,  es werden also keine semicolons oder curly brackets verwendet.  
+  Es wird bei Runtime compiled und der compiler kann anhand von Tabstopps die Richtige codestruktur erkennen.
+
+- Eine wichtige regel die ich mir bei der Entwicklung selbst gesetzt habe ist es,  
+  sowohl die Variablen-Namen, als auch die Kommentare und dateien auf Englisch zu schreiben.
+
+![Engine screenshot](Docs/Pictures/Screenshots/Engine.png)

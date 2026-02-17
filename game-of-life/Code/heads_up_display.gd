@@ -1,31 +1,37 @@
-class_name Hud extends CanvasLayer
+extends CanvasLayer
 
-##Variable used to toggle HUD visibility
+#******************************************************************************#
+
+## heads_up_display.gd
+## Controls all HUD logic
+## - Button input
+## - HUD animatins
+## - HUD texture swaps
+
+#******************************************************************************#
+
+#Variable used to toggle HUD visibility
 @onready var HUD : Control = $Control
 @onready var fade: AnimationPlayer = $Control/Fade_in_out
 
-
-##Variable for the TileMap |Used to pause/unpause and control the update speed
+#Variable for the TileMap |Used to pause/unpause and control the update speed
 @onready var game := get_node("../TileMapLayer")
 
-##Variables for the two different buttons
+#Variables for the button/s
 @onready var play_pause: TextureButton = $Control/PlayPause
 
 @export_category("Play / Pause")
 @export var icon_play:Texture2D
 @export var icon_pause:Texture2D
 
-@onready var next_step: TextureButton = $Control/NextStep
-
-##Variables for the speed indicator of the generation update time
+#Variables for the speed indicator and levels for the iteration speed
 @onready var speed_controls: VBoxContainer = $Control/Speed_controls
 @onready var speed_display: Label = $Control/Speed_Ring_Button/Speed_Display
 
 
 
-# Called when the node enters the scene tree for the first time.
+#Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
 	HUD.visible = true
 	
 	if game.playing:
@@ -34,8 +40,7 @@ func _ready() -> void:
 		play_pause.texture_normal = icon_pause
 	
 
-
-
+#Controls how the HUD fading in and out behave
 func toggle_fade() -> void:
 	if HUD.visible == true:
 		fade.play("fade_out")
@@ -44,7 +49,7 @@ func toggle_fade() -> void:
 		fade.play("fade_in")
 	
 
-
+#Controls both the Iteration flow and the sprite for the Pause/Play button
 func _on_play_pause_pressed() -> void:
 	game.playing = !game.playing
 	
@@ -54,11 +59,12 @@ func _on_play_pause_pressed() -> void:
 		play_pause.texture_normal = icon_pause
 	
 
-
+#Controls the next step button behavior
 func _on_next_step_pressed() -> void:
 	game.update_cells()
 	
 
+#Same but for the Speed ring
 func _on_speed_ring_button_pressed() -> void:
 	if speed_controls.visible:
 		fade.play("speed_select_out")
@@ -68,11 +74,12 @@ func _on_speed_ring_button_pressed() -> void:
 	
 	
 
+#Controls the little text behind the Speed ring
 func update_speed_display() -> void:
 	speed_display.text = str(game.speed_level)
 	
 
-
+#Applies the selected speed level based on predefined button metadata
 func _on_speed_level_pressed(button: Button) -> void:
 	var value : int = button.get_meta("speed_level")
 	
@@ -81,7 +88,7 @@ func _on_speed_level_pressed(button: Button) -> void:
 	update_speed_display()
 	
 	speed_controls.visible = !speed_controls.visible
-
+	
 
 #All input related Functions
 func _input(event: InputEvent) -> void:

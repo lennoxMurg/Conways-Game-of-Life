@@ -1,18 +1,33 @@
 extends TileMapLayer
 
+#******************************************************************************#
+
+## tile_GoL.gd
+## Controls the main game logic
+## - Cell iteration
+## - Iteration speed
+## - Player input for mouse clicks
+
+#******************************************************************************#
+
+#Predefines coordinates of alive/dead cells on the tilemap atlas
 var alive_cell : Vector2i = Vector2i(1, 0)
 var dead_cell : Vector2i = Vector2i(0, 0)
 
+#This variable controls wether or not cells should iterate
 var playing : bool = false
 
+#Both the height and width of the "playing" field
 @export_category("Map Size")
 @export var width : int
 @export var height : int
 
-##Variables for the Generational update speed / Timer
+
+#Variables for the Generational update speed / Timer
 var update_speed : float = 0.15 #Seconds per generation
 var timer : float = 0.00 #The timer start time
 
+#speed_level defines hoe many times a second the cells should iterate |Different levels have been given to the speed_level_select buttons metadata
 var speed_level : int = 1
 
 
@@ -23,12 +38,13 @@ func _ready() -> void:
 			set_cell(Vector2i(x, y), 0, Vector2i(0, 0), 0)
 	
 
-
+#Calculates the iteration speed
 func apply_speed() -> void:
 	update_speed = 1.0 / speed_level
 	
 
 
+#Runs 60 times per second
 func _process(delta: float) -> void:
 	if playing:
 		timer += delta
@@ -37,6 +53,7 @@ func _process(delta: float) -> void:
 			update_cells()
 
 
+#The main function for the cell iteration
 func update_cells() -> void:
 	var next_state = []
 	
@@ -71,7 +88,7 @@ func update_cells() -> void:
 			set_cell(Vector2i(x, y), 0, next_state[x][y], 0)
 	
 
-
+#The method to allow all 4 rules to be applied correctly
 func count_neighbors(location: Vector2i) -> int:
 	var offsets = [
 		Vector2i(-1, -1), Vector2i(0, -1), Vector2i(1, -1),
@@ -96,6 +113,7 @@ func count_neighbors(location: Vector2i) -> int:
 	return count
 
 
+#The method called once player input changes a cells status
 func toggle_cell(tile_location: Vector2i) -> void:
 	var current_cell := get_cell_atlas_coords(tile_location)
 	

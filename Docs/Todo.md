@@ -39,29 +39,27 @@
 ## 6. UI & Interaktion
 
 - [X] Start/Stop‑Button
-- [ ] Reset‑Button
 - [X] Geschwindigkeitsslider
-- [ ] Grid‑Größe einstellbar (optional)
-- [ ] Presets (Glider, Pulsar, Random) optional hinzufügen
+- [-] Grid‑Größe einstellbar (optional)
+- [-] Presets (Glider, Pulsar, Random) optional hinzufügen
 
 ## 7. Dokumentation
 
-- [ ] Architektur erklären
-- [ ] Entscheidungen begründen
-- [ ] Screenshots/GIFs einfügen (wenn Prototyp fertig)
-- [ ] README aktualisieren
+- [X] Entscheidungen begründen
+- [X] Screenshots/GIFs einfügen (wenn Prototyp fertig)
+- [X] README aktualisieren
 
 ## 8. Feinschliff
 
-- [ ] Code kommentieren
-- [ ] Unnötige Dateien entfernen
-- [ ] Projektstruktur aufräumen
-- [ ] Kleine Bugs fixen
-- [ ] Performance optimieren (falls nötig)
+- [X] Code kommentieren
+- [X] Unnötige Dateien entfernen
+- [X] Projektstruktur aufräumen
+- [X] Kleine Bugs fixen
+- [X] Performance optimieren (falls nötig)
 
 ## 9. Abgabe vorbereiten
 
-- [ ] Repo final durchgehen
+- [X] Repo final durchgehen
 - [ ] README finalisieren
 - [ ] Docs prüfen
 - [ ] Kurze Präsentation/Erklärung für das Gespräch vorbereiten

@@ -33,7 +33,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Title_V2:custom_minimum_size")
+tracks/2/path = NodePath("Label Container/Title_V2:custom_minimum_size")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -87,15 +87,29 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nhmg3")
 
-[node name="Title_V2" type="Label" parent="." unique_id=1097574326]
-layout_mode = 1
+[node name="Label Container" type="Node" parent="." unique_id=793658251]
+
+[node name="Credits" type="Label" parent="Label Container" unique_id=727068427]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -181.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_ugp1d")
+text = "Von Lennox Murg - 2026"
+
+[node name="Title_V2" type="Label" parent="Label Container" unique_id=1097574326]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -384.0
+offset_left = -467.0
 offset_top = 150.0
-offset_right = 384.0
-offset_bottom = 173.0
+offset_right = 467.0
+offset_bottom = 337.0
 grow_horizontal = 2
 scale = Vector2(0.98, 0.98)
 theme_override_fonts/font = ExtResource("2_t1b1y")
@@ -103,6 +117,24 @@ theme_override_font_sizes/font_size = 155
 text = "Game of Life"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Label Container" unique_id=1791448731]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -257.0
+offset_right = 192.0
+grow_vertical = 0
+text = "Game controls
+
+
+P = Pause
+
+ESC = Closes the game
+
+H = Hides HUD
+
+N = Iterates all cells once"
 
 [node name="ButtonContainer" type="VBoxContainer" parent="." unique_id=385729710]
 layout_mode = 1
@@ -131,20 +163,6 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_t1b1y")
 theme_override_font_sizes/font_size = 45
 text = "Quit"
-
-[node name="Credits" type="Label" parent="." unique_id=727068427]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -136.0
-offset_top = -23.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("4_ugp1d")
-text = "Von Lennox Murg - 2026"
 
 [node name="MenuPlayer" type="AnimationPlayer" parent="." unique_id=2018544336]
 libraries/ = SubResource("AnimationLibrary_tjcm1")
